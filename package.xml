@@ -15,4 +15,6 @@
   <depend>rosbag_manager_msgs</depend>
   <depend>roscpp</depend>
   <depend>rosgraph_msgs</depend>
+
+  <test_depend>catkin_clang_format</test_depend>
 </package>

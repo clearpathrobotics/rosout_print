@@ -47,3 +47,13 @@ install(TARGETS rosout_print
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
 )
+
+#############
+## Testing ##
+#############
+if (CATKIN_ENABLE_TESTING)
+  find_package(catkin_clang_format)
+  catkin_clang_lint_cpp()
+  catkin_clang_format_cpp()
+  catkin_clang_lint_add_test()
+endif()
