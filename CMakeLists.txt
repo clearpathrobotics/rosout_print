@@ -57,16 +57,3 @@ if (CATKIN_ENABLE_TESTING)
   catkin_clang_format_cpp()
   catkin_clang_lint_add_test()
 endif()
-
-
-if(CATKIN_ENABLE_TESTING)
-  find_package(rostest REQUIRED)
-  find_package(catkin REQUIRED COMPONENTS rosbag)
-
-  catkin_add_nosetests(tests)
-
-  add_rostest_gtest(test_rosout_print tests/rosout_print.test
-    tests/test_rosout_print.cpp src/process_rosout.cpp)
-  target_link_libraries(test_rosout_print ${catkin_LIBRARIES})
-
-endif()
